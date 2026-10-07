@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from src.vectorstore import FaissVectorStore
 from langchain_groq import ChatGroq
-
+from dotenv import load_dotenv
 load_dotenv()
 
 class RAGSearch:
@@ -17,7 +17,7 @@ class RAGSearch:
             self.vectorstore.build_from_documents(docs)
         else:
             self.vectorstore.load()
-        groq_api_key = "REDACTED"
+        groq_api_key = ""
         self.llm = ChatGroq(groq_api_key=groq_api_key, model_name=llm_model)
         print(f"[INFO] Groq LLM initialized: {llm_model}")
 
